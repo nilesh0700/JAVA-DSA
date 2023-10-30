@@ -42,19 +42,19 @@ Explanation: If you give all extraCandies to:
 //     }
 // }
 import java.util.*;
+import java.util.Arrays;  
 public class greatestNoOfCandies{
     public static void main(String[] args){
         int[] candies = {2,3,5,1,3};
+        Arrays.sort(candies);
+        int x=candies.length-1;
+
         int extraCandies = 3;
         ArrayList<Boolean> result = new ArrayList<>();
 
-        int max = candies[0];
-        for(int i = 0; i < candies.length; i++){
-            max = Math.max(max,i);
-        }
 
         for(int i = 0; i < candies.length; i++){
-            if(candies[i] + extraCandies > max){
+            if(candies[i] + extraCandies >= max){
                 result.add(true);
             }else{
                 result.add(false);
@@ -71,24 +71,24 @@ public class greatestNoOfCandies{
 
 
 
-class Solution {
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        ArrayList<Boolean> result = new ArrayList<>();
+// class Solution {
+//     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+//         ArrayList<Boolean> result = new ArrayList<>();
         
-        int max = candies[0];
-        for(int i : candies){
-            max = Math.max(max,i);
-        }
+//         int max = candies[0];
+//         for(int i  = 0; i < candies; i++){
+//             max = Math.max(max,i);
+//         }
 
-        for(int i = 0; i < candies.length; i++){
+//         for(int i = 0; i < candies.length; i++){
             
-                if(candies[i] + extraCandies >= max ){
-                result.add(true);
-                }else{
-                result.add(false);
-                }
+//                 if(candies[i] + extraCandies >= max ){
+//                 result.add(true);
+//                 }else{
+//                 result.add(false);
+//                 }
             
-        }
-        return result;
-    }
-}
+//         }
+//         return result;
+//     }
+// }
